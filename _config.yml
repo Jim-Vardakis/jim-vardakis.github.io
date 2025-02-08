@@ -10,8 +10,8 @@
 locale                   : "en-US"
 site_theme               : "default"
 title                    : "Ah, the homepage button!"
-title_separator          : "-"
-name                     : &name "Dimitris Vardakis"
+title_separator          : "&#124;" # escape character for |
+name                     : &name "Vardakis Dimitris"
 description              : &description "Some necessary(?) description."
 url                      : https://jim-vardakis.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"

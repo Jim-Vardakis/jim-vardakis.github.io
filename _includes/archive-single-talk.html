@@ -12,6 +12,7 @@
   {% assign title = post.title %}
 {% endif %}
 
+
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -25,6 +26,34 @@
           alt="">
       </div>
     {% endif %}
+
+<p>
+      <strong>{{ title }}</strong> <i>{{ post.type }} at {{ post.event }}</i>
+
+      {% if post.eventurl %}
+        [<a href=" {{ post.eventurl }} ">link</a>]
+      {% endif %}
+
+      <br>
+      
+      {{ post.institution }} &mdash;
+      
+      {% if post.country and post.city and post.is_online %}
+        {{ post.city }}, {{ post.country }} (online) &mdash;
+      {% elsif post.country and post.city %}
+        {{ post.city }}, {{ post.country }} &mdash;
+      {% elsif post.country and post.is_online %}
+        {{ post.country }} (online) &mdash;
+      {% elsif post.city and post.is_online %}
+        {{ post.city }} (online) &mdash;
+      {% elsif post.country %}
+        {{ post.country }} &mdash;
+      {% endif %}
+
+      {{ post.month }} {{ post.year }}
+</p>
+
+<!--
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -32,11 +61,19 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
+
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+    {% if post.date %}
+      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>
+    {% endif %}
+    {% if post.venue %}
+      <p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}}
+    {% endif %}
+    {% if post.excerpt %}
+      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% endif %}
+-->
   </article>
 </div>
