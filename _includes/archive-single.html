@@ -65,6 +65,42 @@
     {% elsif post.slidesurl %}
       <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% endif %}
+    
+<!-- <a href="{{ post.paperurl }}" download="{{ post.authors }} - {{ post.title }}.pdf">{{ post.title }}</a> -->
 
+   {{ post.authors }}. <strong>{{ post.title }}</strong>.
+    {% if post.preprint %}
+      (preprint)
+    {% endif %}
+   <br />
+
+    {% if post.volume and post.number and post.issue %}
+      In: <i>{{ post.journal }}</i> {{ post.volume }}.{{ post.number }}({{ post.issue }})
+    {% elsif post.volume and post.number %}
+      In: <i>{{ post.journal }}</i> {{ post.volume }}.{{ post.number }}
+    {% elsif post.volume and post.issue %}
+      In: <i>{{ post.journal }}</i> {{ post.volume }}({{ post.issue }})
+    {% elsif post.number and post.issue %}
+      In: <i>{{ post.journal }}</i> {{ post.number }}({{ post.issue }})
+    {% elsif post.issue %}
+      In: <i>{{ post.journal }}</i> ({{ post.issue }})
+    {% elsif post.number %}
+      In: <i>{{ post.journal }}</i> {{ post.number }}
+    {% endif %}
+   ({{ post.date | date: "%b. %Y" }}).
+    {% if post.pages %}
+      pp. {{ post.pages }}.
+    {% endif %}
+   <br />
+
+    {% if post.doi %}
+      <span style="font-variant: small-caps;">doi</span>: <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer">{{ post.doi }}</a>.
+    {% endif %}
+    {% if post.journalurl %}
+      <span style="font-variant: small-caps;">url</span>: <a href="{{ post.journalurl }}" target="_blank" rel="noopener noreferrer">{{ post.journal }}</a>.
+    {% endif %}
+    {% if post.arxiv %}
+      <span style="font-variant: small-caps;">arxiv</span>: <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer">{{ post.arxiv }}</a>.
+    {% endif %}
   </article>
 </div>
