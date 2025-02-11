@@ -1,5 +1,6 @@
 ---
 permalink: /
+seo_title: "Home"
 title: "And the homepage!"
 author_profile: true
 redirect_from: 

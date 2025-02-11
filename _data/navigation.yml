@@ -3,6 +3,8 @@
 # Changing the order here will adjust the order and you can also add additional
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
+# 
+# Details can be customised by editing _includes/masthead.html.
 
 main:
   - title: "Publications & Preprints"
@@ -19,11 +21,9 @@ main:
         
 #  - title: "Blog Posts"
 #    url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-#    <a href="{{ base_path }}{{ post.url }}" rel="permalink" download="{{ post.authors }} - {{ post.title }}.pdf">{{ post.title }}</a>
-#     url: https://github.com/Jim-Vardakis/jim-vardakis.github.io/blob/master/files/CV%20Resume.pdf
 
-  - title: "Guide"
-    url: /markdown/
+#  - title: "Guide"
+#    url: /markdown/
+
+  - title: "CV"
+    url: /files/CV Resume.pdf

@@ -6,18 +6,18 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
-<!--
-{% if page.title %}
-  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
-{% endif %}
--->
-
+<!-- CHANGED `site.title` to `site.name` -->
 {% if page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.name %}
 {% endif %}
 
 {% if seo_title %}
   {% assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once %}
+{% endif %}
+
+<!-- ADDED to manually alter `seo_tilte` for each page (`page.seo_title`) -->
+{% if page.seo_title %}
+  {% assign seo_title = page.seo_title | markdownify | strip_html | strip_newlines | escape_once | append: " " | append: site.title_separator | append: " " | append: site.name %}
 {% endif %}
 
 {% if site.url %}

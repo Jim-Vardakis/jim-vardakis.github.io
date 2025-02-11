@@ -7,11 +7,11 @@
   {% assign teaser = site.teaser %}
 {% endif %}
 
-<!-- Assigning the title (???) -->
+<!-- Assigning a title to posts (???) -->
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign title = post.title %}
+  {% assign title = post.alternate_title %}
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
@@ -90,12 +90,12 @@
 <!-- 2nd attemtp based on the above code:  -->
 <!-- <a href="{{ base_path }}{{ post.url }}" rel="permalink" download="{{ post.authors }} - {{ post.title }}.pdf">{{ post.title }}</a> -->
 
-<!-- Proper bibliography format -->
-<!-- REMOVED class="archive__item-title" -->
+<!-- Title -->
     <p>
       <strong style="text-decoration: underline;" itemprop="headline">{{ post.title }}</strong>. {{ post.authors }}.
       <br />
       
+<!-- Bibliografic information -->
       {% if post.preprint %}
         &mdash;<i>preprint</i>&mdash;
       {% endif %}
@@ -118,6 +118,7 @@
       {% endif %}
       <br />
       
+<!-- External links -->
       {% if post.doi %}
         <span style="font-variant: small-caps;">doi</span>: <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer">{{ post.doi }}</a>.
       {% endif %}
