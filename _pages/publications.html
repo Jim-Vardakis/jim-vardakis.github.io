@@ -5,6 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
+<!-- Google scholar and arXiv showcasing -->
 {% if site.author.googlescholar and site.author.arxiv %}
   <div class="wordwrap">(Also at <a href="{{site.author.googlescholar}}">Google Scholar</a> or <a href="{{site.author.arxiv}}">arXiv</a>.)</div>
 {% elsif site.author.googlescholar %}
@@ -16,25 +17,29 @@ author_profile: true
 {% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
+<!-- DISABLED
+{ DISABLE % if site.publication_category %}
+  { DISABLE % for category in site.publication_category %}
+    { DISABLE % assign title_shown = false %}
+    { DISABLE % for post in site.publications reversed %}
+      { DISABLE % if post.category != category[0] %}
+        { DISABLE % continue %}
+      { DISABLE % endif %}
+      { DISABLE % unless title_shown %}
         <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+        { DISABLE % assign title_shown = true %}
+      { DISABLE % endunless %}
+      { DISABLE % include archive-single.html %}
+    { DISABLE % endfor %}
+  { DISABLE % endfor %}
+{ DISABLE % else %}
+  { DISABLE % for post in site.publications reversed %}
+    { DISABLE % include archive-single.html %}
+  { DISABLE % endfor %}
+{ DISABLE % endif %}
+-->
 
-
-
+<!-- Without style rendering for categories -->
+{% for post in site.publications reversed %}
+  {% include archive-single.html %}
+{% endfor %}

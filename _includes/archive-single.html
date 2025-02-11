@@ -46,6 +46,10 @@
     {% endif %}
 
 <!-- Teaching VS Publication -->
+<!-- ADDED BACK -->
+        {% if post.collection == 'teaching' %}
+          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% endif %}
 <!-- REMOVED
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
@@ -93,7 +97,7 @@
       <br />
       
       {% if post.preprint %}
-        (preprint)
+        &mdash;<i>preprint</i>&mdash;
       {% endif %}
       {% if post.volume and post.number and post.issue %}
         In: <i>{{ post.journal }}</i> {{ post.volume }}.{{ post.number }}({{ post.issue }})
