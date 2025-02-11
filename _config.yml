@@ -9,13 +9,14 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Ah, the homepage button!"
+title                    : "Vardakis Dimitris"
 title_separator          : "&#124;" # escape character for |
 name                     : &name "Vardakis Dimitris"
-description              : &description "Some necessary(?) description."
+home_button              : "Ah, the homepage button!" # added to relief '.title' functions
+description              : &description "The website of Dimitris Vardakis based on Github."
 url                      : https://jim-vardakis.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : # "jim-vardakis/jim-vardakis.github.io"
+repository               : "jim-vardakis/jim-vardakis.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
