@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-So... My name is *Dimitris Vardakis*. I finished my undergraduate studies at the University of Crete in Greece, and then completed my PhD at Michigan State University under [Alexander Volberg](https://www.researchgate.net/profile/Alexander-Volberg). Currently, I am doing my postdoc at Julius-Maximilians-Universität (JMU) in Würzburg, Germany, under [Stefanie Petermichl](https://www.mathematik.uni-wuerzburg.de/en/harmonicanalysis/team/petermichl-stefanie/).
+So... My name is **Dimitris Vardakis**. I finished my undergraduate studies at the University of Crete in Greece, and then completed my PhD at Michigan State University under [Alexander Volberg](https://www.researchgate.net/profile/Alexander-Volberg). Currently, I am doing my postdoc at Julius-Maximilians-Universität (JMU) in Würzburg, Germany, under [Stefanie Petermichl](https://www.mathematik.uni-wuerzburg.de/en/harmonicanalysis/team/petermichl-stefanie/).
 
 My Research
 ======
