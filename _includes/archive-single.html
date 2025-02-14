@@ -92,10 +92,15 @@
 
 <!-- Title -->
     <p>
-      <strong style="text-decoration: underline;" itemprop="headline">{{ post.title }}</strong>. {{ post.authors }}.
+      {% if post.subtitle %}
+        <strong style="text-decoration: underline;" itemprop="headline">{{ post.title }}: {{ post.subtitle }}</strong>.
+      {% else %}
+        <strong style="text-decoration: underline;" itemprop="headline">{{ post.title }}</strong>.
+      {% endif %}
+      {{ post.authors }}.
       <br />
       
-<!-- Bibliografic information -->
+<!-- Bibliografic information article -->
       {% if post.preprint %}
         &mdash; <i>preprint</i> &mdash;
       {% endif %}
@@ -112,12 +117,27 @@
       {% elsif post.number %}
         In: <i>{{ post.journal }}</i> {{ post.number }}
       {% endif %}
-      ({{ post.date | date: "%b. %Y" }}).
+      {% if post.journal %}
+        ({{ post.date | date: "%b. %Y" }}).
+      {% endif %}
       {% if post.pages %}
         pp. {{ post.pages }}.
       {% endif %}
+
+<!-- Bibliografic information book -->
+      {% if post.edition %}
+        {{ post.edition }} edition.
+      {% endif %}
+      {{ post.publisher }} {{ post.location }}
+      {% if post.publisher %}
+        {{ post.date | date: "%Y" }}.
+      {% endif %}
+      {% if post.isbn %}
+        <span style="font-variant: small-caps;">isbn</span>: {{ post.isbn }}
+      {% endif %}
+
       <br />
-      
+
 <!-- External links -->
       {% if post.doi %}
         <span style="font-variant: small-caps;">doi</span>: <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer">{{ post.doi }}</a>.
