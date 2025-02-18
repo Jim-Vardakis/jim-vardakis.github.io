@@ -14,7 +14,7 @@ My Research
 ======
 revolves around Harmonic Analysis (also on the Hamming cube), Geometric Measure Theory, and Dynamical Systems. I am interested in the decay rate of the Favard length of (random) Cantor sets and on certain (somehow relevant) one-phase problems. Currently, I'm working on the boundedness of Calderón-Zygmund operators with matrix weights. At the same time, I am trying to construct Julia sets through random iterations.
 
-The obligatory "research interests" list:
+The obligatory research-interests list:
 ------
 - Julia sets
 - Random Cantor sets
