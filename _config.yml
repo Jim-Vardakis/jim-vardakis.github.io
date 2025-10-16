@@ -24,9 +24,9 @@ repository               : "jim-vardakis/jim-vardakis.github.io"
 author:
   # Biographic information
   avatar           : "kopenhagen for website.png"
-  name             : "Yep, this is me!"
+  name             : "This is me!"
   pronouns         : # example: "she/her"  
-  bio              : "Hello! My name is Dimitris, and I come from Greece. I climb; I play DnD; and I do math."
+  bio              : "My name is Dimitris, and I come from Greece. I climb; I play DnD; and I do math."
   location         : "Würzburg, Germany"
   employer         : "Julius-Maximilians-Universität"  #  "JMU Würzburg" # README
   uri              : "https://www.mathematik.uni-wuerzburg.de/harmonicanalysis/team/vardakis-dimitros/" # URL
